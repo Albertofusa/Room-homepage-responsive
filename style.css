@@ -40,8 +40,11 @@ button {
   display: none;
 }
 
-/*header*/
+.toggle__desktop {
+  display: none;
+}
 
+/*header*/
 .header__content {
   width: 100%;
   display: flex;
@@ -53,8 +56,7 @@ button {
   background-repeat: no-repeat;
   background-size: cover;
   width: 100%;
-  height: 350px;
-  padding: 4rem 2rem 2rem 2rem;
+  padding: 4rem 2rem 30rem 2rem;
   position: relative;
 }
 
@@ -93,6 +95,7 @@ button {
 .header__information {
   width: 100%;
   padding: 5rem 2rem;
+  position: relative;
 }
 
 .title__information {
@@ -126,7 +129,7 @@ button {
 .main__container {
   width: 100%;
   display: grid;
-  grid-template-rows: repeat(3, 250px);
+  grid-template-rows: repeat(3, 1fr);
 }
 
 .room__img__mobile {
@@ -156,4 +159,101 @@ button {
   font-size: 14px;
   line-height: 2rem;
   max-width: 98%;
+}
+
+@media (min-width: 500px) {
+  .navbar__background {
+    background-image: url(/images/desktop-image-hero-1.jpg);
+  }
+}
+
+@media (min-width: 1200px) {
+  .header__content {
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+  }
+
+  .navbar__background {
+    width: 60%;
+    padding: 4rem 2rem 45rem 2rem;
+  }
+
+  .header__information {
+    width: 40%;
+    padding: 10rem 8rem;
+  }
+
+  .main__container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 30% 40% 30%;
+    grid-template-rows: repeat(1, 1fr);
+  }
+
+  /*navbar*/
+
+  .icon__desktop {
+    display: none;
+  }
+
+  .navbar {
+    display: flex;
+    align-items: center;
+    gap: 10%;
+  }
+
+  .navbar__desktop {
+    display: flex;
+    gap: 4rem;
+  }
+
+  .link__desktop {
+    color: var(--white);
+    font-size: 18px;
+  }
+
+  .icon {
+    width: 7rem;
+  }
+
+  .icon__l_r {
+    width: 15px;
+  }
+
+  /*togle*/
+  .toggle {
+    display: none;
+  }
+
+  .toggle__desktop {
+    background-color: var(--black);
+    width: 140px;
+    height: 70px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 4rem 2rem;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+  }
+
+  .toggle__desktop:hover {
+    background-color: var(--dark-gray);
+  }
+
+  /*content header_information*/
+
+  .text__information {
+    color: var(--dark-gray);
+    font-size: 16px;
+    line-height: 2.4rem;
+    padding-bottom: 3rem;
+  }
+
+  .content__description {
+    width: 100%;
+    padding: 4rem 2rem;
+  }
 }
